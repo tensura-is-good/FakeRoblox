@@ -118,8 +118,6 @@ window.onload = async () => {
       }, 5);
     };
     
-    setTimeout(() => document.querySelector('#start').click(), 3000); // force click lol
-
     video.onended = () => {
       video.style.display = "none";
       step = -Infinity;
