@@ -94,7 +94,12 @@ window.onload = async () => {
     start.onclick = async () => {
       start.style.display = "none";
       video.style.display = "flex";
+      document.querySelector('img').style.display = 'none';
       video.play();
+
+      let idk = document.createElement('style')
+      idk.innerText = '* { color: black; }';
+      document.body.appendChild(idk)
 
       const interval = setInterval(() => {
         const time = video.currentTime - 2.1 - (step * 60) / 132; // 132 bpm moment
