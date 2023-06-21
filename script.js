@@ -118,6 +118,7 @@ window.onload = async () => {
     video.onended = () => {
       video.style.display = "none";
       step = -Infinity;
+      if (confirm('if you have stayed til the end, you know this is fake. this site open source, and this is all a joke. send this to someone you hate for memes :)')) window.open('https://github.com/VillainsRule4000/roblox')
     };
   } catch (e) {
     error(`${e.message}`);
