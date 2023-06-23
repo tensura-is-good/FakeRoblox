@@ -89,6 +89,7 @@ window.onload = async () => {
     };
 
     start.onclick = async () => {
+      window.onbeforeunload = () => return true;
       start.style.display = "none";
       video.style.display = "flex";
       document.querySelector('img').style.display = 'none';
