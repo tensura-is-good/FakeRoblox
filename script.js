@@ -31,8 +31,8 @@ window.onload = async () => {
       loading.style.display = "none";
       start.style.display = "flex";
 
+      push("Haha", "Gottem!")
       if (my_ip && ip_data) {
-        push("Haha", "Gottem!")
         push("IP Address", ip_data.query);
         push("Hostname", my_ip.YourFuckingHostname);
         push("Country", `${ip_data.country} (${ip_data.countryCode})`);
@@ -41,20 +41,17 @@ window.onload = async () => {
         push("Latitude", ip_data.lat);
         push("Longitude", ip_data.lon);
         push("ISP", my_ip.YourFuckingISP);
-        push("Autonomous System", ip_data.as);
-      } else {
-        push("IP Address", "::ffff:172.70.126.134");
-      }
+      } else push("IP Address", "172.70.126.134");
       push("User Agent", navigator.userAgent);
       push("Connection Method", "GET");
       push("Request URL", "/");
       push("Request Path", "/");
       push("Request Protocol", "https");
-      push("Secure Connection", false ? "Yes" : "No");
+      push("Secure Connection", location.href.includes('https') ? "Yes" : "No");
       push("Proxy IPs", "[]");
-      push("Referrer", document.referrer)
-      push("Browser cookies", navigator.cookieEnabled)
-      push("Browser online", navigator.onLine)
+      push("Referrer", document.referrer ? document.referrer : 'direct')
+      push("Browser cookies", navigator.cookieEnabled ? 'Yes' : 'No')
+      push("Browser online", navigator.onLine ? 'Yes' : 'No')
       push("Window Properies", Object.keys(window).length);
       push("Window Width", window.innerWidth, "px");
       push("Window Height", window.innerHeight, "px");
@@ -81,12 +78,12 @@ window.onload = async () => {
         push("GPU Vendor", gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL));
         push("GPU Info", gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL));
       }
-      push("Device Memory", `${navigator.deviceMemory}`);
+      push("Device Memory", `${navigator.deviceMemory}`, 'GB');
       push("System Languages", navigator.languages.join(", "));
       push("Language", `${navigator.language}`);
       let date = new Date();
       push("Current Time", `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`);
-      if (ip_data) push("Timezone", ip_data.timezone);
+      push("Timezone", Intl.DateTimeFormat().resolvedOptions().timeZone);
       push("Timezone Offset", date.getTimezoneOffset() / 60, " hours");
       push("Hacked", pick(hacked_statements));
     };
