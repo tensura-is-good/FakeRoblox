@@ -89,18 +89,17 @@ window.onload = async () => {
     };
 
     start.onclick = async () => {
-      window.onbeforeunload = () => console.log('member tried to leave page');
       start.style.display = "none";
       video.style.display = "flex";
       document.querySelector('img').style.display = 'none';
       video.play();
 
-      let idk = document.createElement('style')
+      let idk = document.createElement('style');
       idk.innerText = '* { color: black; }';
-      document.body.appendChild(idk)
+      document.body.appendChild(idk);
 
       const interval = setInterval(() => {
-        const time = video.currentTime - 2.1 - (step * 60) / 132; // 132 bpm moment
+        const time = video.currentTime - 2.1 - (step * 60) / 132;
         if (step >= memes.length) step = -Infinity;
         if (step < 0) return clearInterval(interval);
         if (time >= 0) {
