@@ -1,68 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 * {
-  color: white;
-  font-family: 'Alfa Slab One';
+    color: white;
+    font-family: 'Alfa Slab One';
 }
 
 body {
-  margin: 0;
-  overflow: hidden;
-  height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body,
 #loading,
 #start,
 #data {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #loading,
 #start,
 #video {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .fullscreen {
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
 }
 
 #loading {
-  z-index: 3;
-  font-size: 36px;
+    z-index: 3;
+    font-size: 36px;
 }
 
 #start {
-  flex-direction: column;
-  z-index: 2;
-  font-size: 36px;
+    flex-direction: column;
+    z-index: 2;
+    font-size: 36px;
 }
 
 #data {
-  flex-direction: column;
-  text-align: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 #data span {
-  z-index: 1;
-  background: transparent !important;
+    z-index: 1;
+    background: transparent !important;
 }
 
 @media only screen and (min-aspect-ratio: 1/1) {
-  #video {
-    object-fit: cover;
-  }
+    #video {
+        object-fit: cover;
+    }
 }
